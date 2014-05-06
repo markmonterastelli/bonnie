@@ -1,26 +1,58 @@
 <div class="navbar row" role="navigation">
   <div class="navbar-brand">
-    <a href="#">Bonnie</a>
-    <span class="measure-period">
+    <a href="#"><%= image_tag "logo.png" %></a>
+       <span class="measure-period">
       <i class="fa fa-tasks"></i> measure period:
       <span class="year"><%= Time.zone.at(APP_CONFIG['measure_period_start']).year %></span>
     </span>
+
   </div>
   <ul class="nav navbar-nav pull-right">
-    <li class="active"><a href="#">Measures</a></li>
-    <li><a href="/users/edit">Account</a></li>
-    <% if (current_user.is_admin?)%><li><a href="/#admin/users">Admin</a></li><% end %>
+
+
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="">
-        Help <b class="caret"></b>
+        Measures <b class="caret"></b>
       </a>
       <ul class="dropdown-menu">
+        <li><a href="#">Measures</a></li>
+        <li><a href="http://0.0.0.0:3000">Measure Engine</a></li>
+
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="">
+        Patients <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="http://0.0.0.0:3000/admin/patients">All Patients</a></li>
+      </ul>
+    </li>
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="">
+        Processes <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Processes</a></li>
+      </ul>
+    </li>
+
+
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="">
+        Admin <b class="caret"></b>
+      </a>
+      <ul class="dropdown-menu">
+        <% if (current_user.is_admin?)%><li><a href="/#admin/users">Users</a></li><% end %>
+        <li><a href="http://0.0.0.0:3000/users/edit.53639efb0713ea497f000006">Settings</a></li>
         <li><a href="mailto:bonnie-feedback-list@lists.mitre.org">Contact</a></li>
         <li><a href="http://jira.oncprojectracking.org/browse/BONNIE">Issue Tracker</a></li>
         <li><%= link_to 'User Guide', '/resource/Bonnie_user_guide.pdf' %></li>
+        <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
       </ul>
     </li>
-    <li><%= link_to 'Logout', destroy_user_session_path, :method => :delete %></li>
+
+
   </ul>
 
 </div>
