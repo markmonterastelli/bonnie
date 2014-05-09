@@ -1,13 +1,13 @@
 development:
   sessions:
     default:
-      database: bonnie_development
+      database: beat-development
       hosts:
         - localhost:27017
 test:
   sessions:
     default:
-      database: bonnie_test
+      database: beat-test
       hosts:
         - localhost:27017
       options:
@@ -19,6 +19,6 @@ test:
 production:
   sessions:
     default:
-      database: bonnie_production
+      database: beat-production
       hosts:
         - localhost:27017
