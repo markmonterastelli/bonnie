@@ -1,10 +1,12 @@
 <div class="login">
   <header>
-    <h1>Bonnie</h1>
+    <%= image_tag "logo_big.png" %>
+    <br><br>
     <%= content_tag(:div, flash[:error], id: "flash_error", class: "alert alert-error") if flash[:error] %>
     <%= content_tag(:div, flash[:notice], id: "flash_notice", class: "alert alert-info") if flash[:notice] %>
     <%= content_tag(:div, flash[:alert], id: "flash_alert", class: "alert alert-warning") if flash[:alert] %>
   </header>
+
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:name=>"login_form"}) do |f| %>
     <div class="form-group input-group input-group-lg">

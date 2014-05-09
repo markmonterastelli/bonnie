@@ -1,6 +1,7 @@
 <div class="navbar row" role="navigation">
-  <a class="navbar-brand" href="/">Bonnie</a>
+  <a href="#"><%= image_tag "logo.png" %></a>
 </div>
+
 
 <h1>Account Information</h1>
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put, :name=>"register_form", class: "registration"}) do |f| %>
